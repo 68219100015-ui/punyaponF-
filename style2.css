@@ -1,0 +1,97 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, "Tahoma" , sans-serif;
+    background-color: rgb(191, 169, 196);
+    color: rgb(245, 229, 247);
+}
+nav{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: rgb(1, 2, 1);
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav.logo{
+    color: rgb(209, 170, 203);
+    font-size: 24px;
+    font-weight: bold;  
+}
+ul{
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+nav ul li a {
+    color: rgb(236, 201, 236);
+    text-decoration: none;
+    font-weight: bold;
+}
+nav ul li a:hover{
+    color: crimson;
+}
+.hero{
+    width: 80%;
+    max-width: 1100px;
+    margin: 40px auto;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    padding: 60px;
+    background: linear-gradient(135deg,rgb(175, 131, 139));
+    border-radius: 25px;
+    color: black;
+}
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 400px;
+    width: 400px;
+}
+.hreo-text{
+    flex: 1;
+
+}
+.hreo-text h1{
+ font-size: 48px;
+ margin-bottom: 15px;
+}
+.hreo-text h2{
+ font-size: 25px;
+ margin-bottom: 20px;
+}
+.hreo-text p{
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+.profile{
+    flex: 0 0 280px;
+    height: 280px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 8px solid pink;
+    background: blueviolet;
+}
+.profile img{
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+.btn{
+    display: inline-block;
+    padding: 10px 25px;
+    background: white;
+    color: hotpink;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}

@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Punyapon | Portfolio</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        /* =========================
+           RESET
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Kanit", sans-serif;
+            background: #c2abc8;
+            color: #171018;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            background: rgba(15, 12, 17, 0.96);
+            backdrop-filter: blur(10px);
+
+            padding: 18px 6%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            box-shadow: 0 5px 20px rgba(0,0,0,.2);
+        }
+
+        .logo {
+            color: #fff;
+            font-family: "Playfair Display", serif;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #ffb7cb;
+        }
+
+        nav {
+            display: flex;
+            gap: 35px;
+        }
+
+        nav a {
+            color: white;
+            font-size: 16px;
+            position: relative;
+            transition: .3s;
+        }
+
+        nav a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -7px;
+            width: 0;
+            height: 2px;
+            background: #ffabc2;
+            transition: .3s;
+        }
+
+        nav a:hover {
+            color: #ffabc2;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 650px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            width: 88%;
+            max-width: 1200px;
+
+            margin: 45px auto;
+
+            padding: 70px;
+
+            border-radius: 35px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #b78491,
+                    #a87987
+                );
+
+            box-shadow:
+                0 25px 50px rgba(67, 40, 60, .25);
+
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* decorative circles */
+
+        .hero::before {
+            content: "";
+            position: absolute;
+
+            width: 300px;
+            height: 300px;
+
+            border-radius: 50%;
+
+            background: rgba(255,255,255,.08);
+
+            top: -100px;
+            right: 300px;
+        }
+
+        .hero-text {
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+        }
+
+        .small-title {
+            color: #ffe5ed;
+            font-size: 18px;
+            letter-spacing: 2px;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            line-height: 1.2;
+            margin: 8px 0;
+
+            color: #fff;
+        }
+
+        .hero h1 span {
+            color: #ffd0dd;
+        }
+
+        .hero h2 {
+            font-size: 23px;
+            font-weight: 400;
+            color: #fff;
+        }
+
+        .hero p {
+            margin-top: 15px;
+            color: #f9e8ed;
+            line-height: 1.8;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            border-radius: 30px;
+
+            background: white;
+            color: #ad7183;
+
+            font-weight: 500;
+
+            transition: .3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(0,0,0,.2);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+
+        /* =========================
+           PROFILE IMAGE
+        ========================= */
+
+        .profile-box {
+            position: relative;
+            z-index: 2;
+
+            width: 290px;
+            height: 290px;
+
+            border-radius: 50%;
+
+            padding: 9px;
+
+            background: #ffc0d0;
+
+            box-shadow:
+                0 0 0 12px rgba(255,192,208,.15),
+                0 20px 40px rgba(0,0,0,.25);
+
+            animation: floating 4s ease-in-out infinite;
+        }
+
+        .profile-box img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+        }
+
+        @keyframes floating {
+            0%,100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+
+        /* =========================
+           SECTION
+        ========================= */
+
+        section {
+            width: 88%;
+            max-width: 1200px;
+            margin: 100px auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            color: #251a27;
+        }
+
+        .section-title p {
+            color: #655668;
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .card {
+            background: rgba(255,255,255,.5);
+            border: 1px solid rgba(255,255,255,.6);
+
+            border-radius: 25px;
+
+            padding: 30px;
+
+            box-shadow: 0 15px 30px rgba(70,40,70,.12);
+
+            transition: .3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+        .card h3 {
+            color: #a25e75;
+            font-size: 23px;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            line-height: 1.8;
+            color: #463b47;
+        }
+
+
+        /* =========================
+           SKILLS
+        ========================= */
+
+        .skills {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 20px;
+        }
+
+        .skill {
+            text-align: center;
+
+            padding: 30px 15px;
+
+            border-radius: 22px;
+
+            background: #eadceb;
+
+            transition: .3s;
+        }
+
+        .skill:hover {
+            transform: translateY(-8px);
+            background: #f3e7f3;
+        }
+
+        .skill-icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .skill h3 {
+            color: #704d70;
+        }
+
+
+        /* =========================
+           PROJECT
+        ========================= */
+
+        .projects {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .project {
+            overflow: hidden;
+
+            border-radius: 25px;
+
+            background: white;
+
+            box-shadow: 0 15px 30px rgba(50,30,50,.12);
+
+            transition: .3s;
+        }
+
+        .project:hover {
+            transform: translateY(-10px);
+        }
+
+        .project-img {
+            height: 180px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #d895a9,
+                    #9f7bab
+                );
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 55px;
+        }
+
+        .project-content {
+            padding: 22px;
+        }
+
+        .project-content h3 {
+            color: #6e4b6e;
+            margin-bottom: 8px;
+        }
+
+        .project-content p {
+            color: #665c67;
+            line-height: 1.6;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact {
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #a97989,
+                    #846489
+                );
+
+            padding: 60px 30px;
+
+            border-radius: 35px;
+
+            color: white;
+        }
+
+        .contact h2 {
+            font-size: 38px;
+        }
+
+        .contact p {
+            margin: 10px 0 25px;
+        }
+
+        .contact-btn {
+            display: inline-block;
+
+            background: white;
+            color: #87566e;
+
+            padding: 12px 30px;
+
+            border-radius: 30px;
+
+            transition: .3s;
+        }
+
+        .contact-btn:hover {
+            transform: scale(1.05);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            text-align: center;
+
+            padding: 30px;
+
+            background: #171018;
+
+            color: #ddd;
+
+            margin-top: 80px;
+        }
+
+        footer span {
+            color: #ffabc2;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 850px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+
+                padding: 45px 25px;
+                gap: 40px;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+            }
+
+            .skills {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .projects {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+
+        @media (max-width: 500px) {
+
+            .hero {
+                width: 94%;
+            }
+
+            section {
+                width: 94%;
+            }
+
+            .profile-box {
+                width: 220px;
+                height: 220px;
+            }
+
+            .hero h1 {
+                font-size: 34px;
+            }
+
+            .skills {
+                grid-template-columns: 1fr;
+            }
+
+            nav a {
+                font-size: 14px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<header>
+
+    <div class="logo">
+        Punya<span>pon</span>
+    </div>
+
+    <nav>
+        <a href="#home">หน้าแรก</a>
+        <a href="#about">ประวัติ</a>
+        <a href="#skills">ทักษะ</a>
+        <a href="#projects">ผลงาน</a>
+        <a href="#contact">ติดต่อ</a>
+    </nav>
+
+</header>
+
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<main id="home">
+
+    <div class="hero">
+
+        <div class="hero-text">
+
+            <div class="small-title">
+                WELCOME TO MY PORTFOLIO ♡
+            </div>
+
+            <h1>
+                สวัสดีค่ะ <span>♥</span>
+            </h1>
+
+            <h2>
+                ฉันชื่อ ปุณยาพร อุดมทรัพย์
+            </h2>
+
+            <p>
+                นักเรียนระดับชั้น ปวช.2/1<br>
+                วิทยาลัยอาชีวศึกษาชีวศาอุบลราชธานี
+            </p>
+
+            <div class="buttons">
+
+                <a href="#about" class="btn">
+                    รู้จักฉันมากขึ้น
+                </a>
+
+                <a href="#contact"
+                   class="btn btn-outline">
+                    ติดต่อฉัน
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="profile-box">
+
+            <!-- เปลี่ยนชื่อไฟล์รูปตรงนี้ -->
+            <img src="S__4456451.jpg"
+                 alt="Profile">
+
+        </div>
+
+    </div>
+
+</main>
+
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section id="about">
+
+    <div class="section-title">
+
+        <h2>เกี่ยวกับฉัน</h2>
+
+        <p>
+            About Me
+        </p>
+
+    </div>
+
+
+    <div class="about">
+
+        <div class="card">
+
+            <h3>🌷 ประวัติส่วนตัว</h3>
+
+            <p>
+                สวัสดีค่ะ ฉันชื่อปุณยาพร
+                เป็นนักเรียนสายอาชีพที่มีความสนใจ
+                ด้านเทคโนโลยี การออกแบบเว็บไซต์
+                และงานสร้างสรรค์ต่าง ๆ
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>✨ ความสนใจ</h3>
+
+            <p>
+                ฉันชอบเรียนรู้สิ่งใหม่ ๆ
+                โดยเฉพาะการเขียนเว็บไซต์
+                การออกแบบกราฟิก การถ่ายภาพ
+                และการสร้างผลงานที่สามารถนำไปใช้งานจริงได้
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     SKILLS
+========================= -->
+
+<section id="skills">
+
+    <div class="section-title">
+
+        <h2>ทักษะของฉัน</h2>
+
+        <p>
+            My Skills
+        </p>
+
+    </div>
+
+
+    <div class="skills">
+
+        <div class="skill">
+            <div class="skill-icon">💻</div>
+            <h3>HTML</h3>
+            <p>สร้างโครงสร้างเว็บไซต์</p>
+        </div>
+
+        <div class="skill">
+            <div class="skill-icon">🎨</div>
+            <h3>CSS</h3>
+            <p>ออกแบบและตกแต่งเว็บไซต์</p>
+        </div>
+
+        <div class="skill">
+            <div class="skill-icon">⚡</div>
+            <h3>JavaScript</h3>
+            <p>เพิ่มลูกเล่นให้เว็บไซต์</p>
+        </div>
+
+        <div class="skill">
+            <div class="skill-icon">📸</div>
+            <h3>Graphic</h3>
+            <p>ออกแบบสื่อและภาพกราฟิก</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     PROJECTS
+========================= -->
+
+<section id="projects">
+
+    <div class="section-title">
+
+        <h2>ผลงานของฉัน</h2>
+
+        <p>
+            My Projects
+        </p>
+
+    </div>
+
+
+    <div class="projects">
+
+        <div class="project">
+
+            <div class="project-img">
+                🌸
+            </div>
+
+            <div class="project-content">
+
+                <h3>เว็บไซต์ Portfolio</h3>
+
+                <p>
+                    เว็บไซต์แนะนำตัวและรวบรวมผลงาน
+                    สำหรับใช้เป็น Portfolio ส่วนตัว
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="project">
+
+            <div class="project-img">
+                🎨
+            </div>
+
+            <div class="project-content">
+
+                <h3>งานออกแบบกราฟิก</h3>
+
+                <p>
+                    ผลงานการออกแบบโปสเตอร์
+                    และสื่อประชาสัมพันธ์
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="project">
+
+            <div class="project-img">
+                💡
+            </div>
+
+            <div class="project-content">
+
+                <h3>โปรเจกต์เว็บไซต์</h3>
+
+                <p>
+                    การสร้างเว็บไซต์จาก HTML,
+                    CSS และ JavaScript
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section id="contact">
+
+    <div class="contact">
+
+        <h2>ติดต่อฉัน 💌</h2>
+
+        <p>
+            หากต้องการพูดคุยหรือสอบถามเพิ่มเติม
+            สามารถติดต่อฉันได้เลยค่ะ
+        </p>
+
+        <a href="mailto:example@gmail.com"
+           class="contact-btn">
+            ✉ ส่งอีเมล
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    © 2026
+    <span>Punyapon</span>
+    — My Portfolio ♡
+
+</footer>
+
+
+</body>
+</html>
